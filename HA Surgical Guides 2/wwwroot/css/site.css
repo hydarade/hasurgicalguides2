@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Didot:wght@700&display=swap');
+
+/* Base font size for scalability */
+html {
+    font-size: 2vw; /* Scales with viewport width for better responsiveness */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 1vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 0.9vw;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+body {
+    position: relative;
+    margin-bottom: 60px;
+    background-color: rgba(0, 148, 255, 0.1); /* Light blue background */
+    min-height: 350vh; /* Ensure the body is at least the full height of 350vh */
+}
+
+    body::after {
+        content: ''; /* Creates a pseudo-element */
+        position: absolute !important; /* Force absolute positioning */
+        top: 93vh !important; /* Force the colored section to start 93% from the top of the viewport */
+        left: 0 !important;
+        width: 100% !important;
+        height: 260vh !important; /* Adjusted height of the entire colored section */
+        background: linear-gradient(to bottom, rgba(245, 245, 220, 0.5) 17%, /* More transparent cream color */
+        rgba(0, 148, 255, 0.1) 17% 64%, /* Light blue shade */
+        #d3d3d3 64% 84%, /* Light silver instead of coral */
+        #a9a9a9 84% 100%) !important; /* Gray instead of light blue */
+        z-index: -1 !important; /* Ensure it's behind the body content */
+    }
+  
+    body::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Set height relative to the viewport height */
+        color: #333; /* Text color */
+        font-family: 'Didot', serif;
+        font-size: 2.5vw; /* Font size */
+        text-align: center; /* Center text alignment */
+        padding: 2vw; /* Padding for spacing */
+        line-height: 1.4;
+        z-index: -1; /* Make sure it is behind other content */
+        top: 105%; /* Position it lower */
+        display: flex; /* Flex display for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        flex-direction: column; /* Arrange content in columns */
+    }
+
+
+        body::after p {
+            margin: 0; /* Remove default margin */
+            line-height: 1.4; /* Add line spacing */
+        }
+
+/* Add media queries if you need to adjust the font sizes for larger screens */
+@media (min-width: 768px) {
+    body::after {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    body::after {
+        font-size: 1.8vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    body::after {
+        font-size: 1.5vw;
+    }
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/NewFolder/Adobe%20Stock%20CBCT.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+
+    /* Border simulation using box-shadow */
+    box-shadow: 0 0 0 0.2vw rgba(0, 148, 255, 0.7); /* Adjust color and size as needed */
+    border-radius: 0.5vw; /* Optional: Rounded corners to match your logo */
+}
+
+.text-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 2rem; /* Responsive padding */
+    margin-top: -3vw; /* Responsive negative margin */
+    z-index: 1;
+    color: #ffffff;
+}
+
+/* Logo responsive styles with translucent background */
+.logo {
+    width: 25vw; /* Percentage-based width for responsiveness */
+    height: auto;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 1vw; /* Space around the logo for better visual effect */
+    background-color: rgb(0, 148, 255, 0.7); /* Translucent background */
+    border-radius: 0.5vw; /* Rounded corners */
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 20vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        width: 15vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    .logo {
+        width: 10vw;
+    }
+}
+
+/* Increase font sizes for the middle text */
+.text-center h1 {
+    font-family: 'Didot', serif;
+    font-weight: bold;
+    margin: 2rem 0;
+    font-size: 10vw !important; /* Force large size */
+    text-align: center;
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+.text-center h2 {
+    font-family: 'Didot', serif;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-size: 6vw !important; /* Force large size */
+    text-align: center;
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+.text-center p {
+    font-family: 'Didot', serif;
+    font-size: 5vw !important; /* Force large size */
+    max-width: 80vw;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 2rem;
+    color: #ffffff;
+}
+
+/* Optional: Increase even more for large screens */
+@media (min-width: 1440px) {
+    .text-center h1 {
+        font-size: 3.2vw !important;
+    }
+
+    .text-center h2 {
+        font-size: 1.6vw !important;
+    }
+
+    .text-center p {
+        font-size: 1.6vw !important;
+    }
+}
+
+/* Plan Your Next Case Button styles */
+.btn-plan-case {
+    padding: 4vw 8vw; /* Reduced padding for a smaller button */
+    font-size: 5vw; /* Reduced font size */
+    font-family: 'Didot', serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #258cfb;
+    border: none;
+    border-radius: 2.5vw;
+    text-align: center;
+    text-decoration: none;
+    position: absolute; /* Changed to absolute for precise centering */
+    top: 22.5%; /* Center vertically within the image */
+    left: 50%; /* Center horizontally within the viewport */
+    transform: translate(-50%, -50%); /* Ensures perfect center alignment */
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .btn-plan-case:hover,
+    .btn-plan-case:focus {
+        background-color: #1e7ac4;
+        transform: translate(-50%, -50%) scale(1.05); /* Slight lift effect on hover */
+    }
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .btn-plan-case {
+        font-size: 3.5vw;
+        padding: 2.5vw 6vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btn-plan-case {
+        font-size: 2.5vw;
+        padding: 2vw 4.5vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    .btn-plan-case {
+        font-size: 2vw;
+        padding: 1.5vw 3.5vw;
+    }
+}
+
+/* Additional font size adjustments for large screens */
+@media (min-width: 1440px) {
+    .text-center h1 {
+        font-size: 2.5vw;
+    }
+
+    .text-center h2 {
+        font-size: 1.2vw;
+    }
+
+    .text-center p {
+        font-size: 1.2vw;
+    }
+}
+
+/* Positioning the textbox at the bottom of the page */
+.textbox {
+    position: absolute; /* Fixes the textbox to the bottom of the viewport */
+    left: 50%;
+    bottom: 64%; /* Position it at the very bottom */
+    transform: translateX(-50%); /* Centers the textbox horizontally */
+    font-family: 'Didot', serif;
+    font-size: 4vw; /* Adjust font size based on viewport size */
+    font-weight: 500; /* Increased boldness */
+    text-align: center;
+    width: 60%; /* Limit the width for readability */
+    color: #000000; /* Changed to black */
+    padding: 2vw; /* Add some padding */
+    line-height: 1.5;
+    z-index: 100; /* Ensure it stays on top of other content */
+}
+
+/* Optional: Adjust font size for larger screens */
+@media (min-width: 768px) {
+    .textbox {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .textbox {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    .textbox {
+        font-size: 1.5vw;
+    }
+}
+
+.additional-info {
+    position: absolute;
+    left: 50%;
+    top: 180vh; /* Adjust as needed to place it lower on the page */
+    transform: translateX(-50%);
+    font-family: 'Didot', serif;
+    font-size: 4vw; /* Responsive font size */
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    z-index: 2;
+    padding: 1vw;
+    line-height: 1.4;
+    max-width: 80vw; /* Limit width for readability */
+}
+
+@media (min-width: 768px) {
+    .additional-info {
+        font-size: 2.5vw;
+        top: 140vh; /* Adjust position for medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .additional-info {
+        font-size: 2vw;
+        top: 120vh; /* Adjust position for larger screens */
+    }
+}
+
+@media (min-width: 1440px) {
+    .additional-info {
+        font-size: 1.5vw;
+        top: 100vh; /* Adjust position for very large screens */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.future-info {
+    position: absolute !important;
+    top: 130vh !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-family: 'Didot', serif !important;
+    font-size: 8vw !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: #000000 !important;
+    z-index: 100 !important;
+    width: 100%;
+    opacity: 0; /* Start with hidden text */
+    animation: none; /* Initially no animation */
+    transition: opacity 5s ease-out, transform 5s ease-out; /* Slow down transition */
+}
+
+/* Media Queries for responsive design */
+@media (min-width: 768px) {
+    .future-info {
+        font-size: 6vw !important;
+        top: 135vh !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .future-info {
+        font-size: 5vw !important;
+        top: 140vh !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .future-info {
+        font-size: 4vw !important;
+        top: 145vh !important;
+    }
+}
+
+.guarantee-box {
+    width: 1900px;
+    height: 1200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative;
+    top: 1960px !important;
+    left: -1370px;
+    padding-top: 200px; /* Adjusted padding to move text lower */
+}
+
+    .guarantee-box h2 {
+        font-weight: bold;
+        font-size: 2.3em;
+        margin: 0 0 15px 0; /* Adds more space below heading */
+    }
+
+    .guarantee-box p {
+        margin-top: 80px; /* Space above each paragraph */
+        margin-bottom: 0; /* No extra space below */
+        line-height: 1.8; /* Adjust for intra-paragraph spacing */
+        font-size: 1.3em !important;
+    }
+
+
+.precision-box {
+    width: 1900px;
+    height: 1200px;
+    border: 1px solid #ccc;
+    position: relative; /* Establish positioning context for children */
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    top: 2100px !important; /* Moves the box further down */
+    left: -1370px; /* Adjust this value to move it further left */
+}
+
+.precision-box {
+    width: 1900px;
+    height: 1200px;
+    border: 1px solid #ccc;
+    position: relative; /* Establish positioning context for children */
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    top: 2100px !important; /* Moves the box further down */
+    left: -1370px !important; /* Adjust this value to move it further left */
+}
+
+    .precision-box .content {
+        position: absolute !important; /* Override other styles */
+        top: 600px !important; /* Pushes the content further down inside the box */
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important; /* Ensures content is centered horizontally */
+        text-align: center !important;
+    }
+
+    .precision-box h2 {
+        font-weight: bold !important;
+        font-size: 2.3em !important;
+        margin: 197px 0 15px 0 !important;
+    }
+
+    .precision-box p {
+        margin-top: 80px !important;
+        margin-bottom: 0 !important;
+        line-height: 1.8 !important;
+        font-size: 1.3em !important;
+    }
+
+
+.efficiency-box {
+    width: 1900px;
+    height: 1200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative;
+    top: -440px !important; /* Keeps the current vertical positioning */
+    left: 730px; /* Moves the box 750px to the left */
+}
+
+    .efficiency-box h2 {
+        font-weight: bold;
+        font-size: 2.3em;
+        margin: 75px 0 15px 0;
+        position: relative;
+        top: -178px; /* Moves the text higher inside the box */
+    }
+
+    .efficiency-box p {
+        margin-top: 80px;
+        margin-bottom: 0px;
+        line-height: 1.8;
+        position: relative;
+        top: -178px; /* Moves the paragraph text higher inside the box */
+        font-size: 1.3em !important;
+    }
+
+
+.local-planning-box {
+    width: 1900px;
+    height: 1200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 100px auto 0 auto; /* Keeps boxes spaced consistently */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative;
+     top: -400px !important; /* Moves the box further down */
+    left: 730px;
+}
+
+    .local-planning-box h2 {
+        font-weight: bold !important;
+        font-size: 2.3em !important;
+        margin: -315px 0 25px 0 !important; /* Same margin as precision-box */
+        padding: 0;
+    }
+
+    .local-planning-box p {
+        margin-top: 65px !important;
+        margin-bottom: 0 !important;
+        line-height: 1.8 !important;
+        font-size: 1.3em !important;
+    }
+
+/* Container for the images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Base styling for all images */
+.image {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+}
+
+/* Positioning Untitled-1 PNG higher and more to the left, with increased size */
+#untitled1 {
+    position: relative;
+    top: -2450px; /* Keep the image moved higher */
+    left: -700px; /* Keep the image moved to the left */
+    width: 600px; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Positioning Untitled-2 PNG higher and more to the left, with increased size */
+#untitled2 {
+    position: relative;
+    top: -2450px; /* Keep the image moved higher */
+    left: 800px; /* Keep the image moved to the left */
+    width: 600px; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Positioning Untitled-1 PNG higher and more to the left, with increased size */
+#untitled3 {
+    position: relative;
+    top: -2100px; /* Keep the image moved higher */
+    left: -700px; /* Keep the image moved to the left */
+    width: 600px; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Positioning Untitled-1 PNG higher and more to the left, with increased size */
+#untitled4 {
+    position: relative;
+    top: -2100px; /* Keep the image moved higher */
+    left: 800px; /* Keep the image moved to the left */
+    width: 600px; /* Increase the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.contact-info {
+    margin-top: -2000px; /* Adjusted value to move it higher */
+    padding: 10px 0; /* Optional: Adjusts internal spacing */
+    color: #f7f7f7; /* Slightly darker white, just a hint of gray */
+    font-size: 3rem !important; /* Forces this font size */
+    font-family: 'Didot', serif !important;
+    font-weight: bold !important;
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* Plan Your Next Case Button styles */
+.plan-your-case-btn {
+    padding: 2vw 2vw; /* Smaller padding */
+    font-size: 2vw; /* Smaller font size */
+    font-family: 'Didot', serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #258cfb;
+    border: none;
+    border-radius: 1.5vw; /* Smaller border-radius */
+    text-align: center;
+    text-decoration: none;
+    position: absolute; /* Changed to absolute for precise centering */
+    top: 85.5%; /* Center vertically within the image */
+    left: 50%; /* Center horizontally within the viewport */
+    transform: translate(-50%, -50%); /* Ensures perfect center alignment */
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .plan-your-case-btn:hover,
+    .plan-your-case-btn:focus {
+        background-color: #1e7ac4;
+        transform: translate(-50%, -50%) scale(1.05); /* Slight lift effect on hover */
+    }
+
+
+.logo-copy {
+    display: block;
+    position: absolute; /* Allows us to position the logo precisely */
+    top: 8800px; /* Adjust this value to move the logo further down */
+    left: 50%; /* Center the logo horizontally */
+    transform: translateX(-50%); /* Centers the logo perfectly */
+    max-width: 1100px; /* Increased size of the logo */
+    cursor: pointer; /* Makes the logo clickable */
+}
+
+/* Initial States for Hidden Elements */
+.image, .future-info {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(30px); /* Slightly offset vertically */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth animation */
+}
+
+/* Animation Trigger */
+.animate {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Image Container Styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0; /* Adds vertical spacing for visibility */
+}
+
+/* Future-Oriented Text Styling */
+.future-info {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 21px; /* Spacing above the text */
+    color: #333; /* Adjust color as needed */
+}
+
+#formContainer {
+    display: flex;
+    justify-content: center; /* Centers the form inside the container */
+    align-items: center;
+    position: absolute; /* Changed to absolute positioning */
+    top: 400px; /* Adjust this value to move the form lower */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Ensure the form uses the full width of the container */
+    max-width: 4000px; /* Maximum width for the form */
+    background-color: #f4f4f4;
+    padding: 50px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+    #formContainer form {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Ensures the form uses the full width of the container */
+    }
+
+    #formContainer input,
+    #formContainer textarea,
+    #formContainer button {
+        padding: 25px;
+        font-size: 50px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%; /* Ensures each element stretches across the full form width */
+    }
+
+    #formContainer textarea {
+        resize: vertical;
+        height: 400px;
+    }
+
+
+
+
